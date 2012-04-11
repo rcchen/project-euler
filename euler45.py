@@ -7,19 +7,17 @@ def pentagonal(number):
 def triangle(number):
 	return (number * (number + 1)) / 2
 
-hexstart = 144
-#penstart = 165
-
-while 1:
-	hexagonal * 2
-
-#temp = penstart
-#while (pentagonal(temp) < hexagonal(hexstart)):
-#	temp = temp + 1
-#	if (pentagonal(temp) == hexagonal(hexstart)):
-#		print pentagonal(temp)
-#		break
-#	if (pentagonal(temp) > hexagonal(hexstart)):
-#		hexstart = hexstart + 1
-#		penstart = penstart + 1
-#		temp = penstart
+found = 0
+start = 144
+while (not found):
+	numHexagonal = hexagonal(start)
+	numPentagonal = 0
+	countPentagonal = 0
+	while (numPentagonal < numHexagonal):
+		numPentagonal = pentagonal(countPentagonal)
+		if (numPentagonal == numHexagonal):
+			found = 1
+			break
+		countPentagonal += 1
+	start += 1
+print "found: " + str(hexagonal(start-1))
