@@ -1,3 +1,4 @@
+#return sum of squares of each digit of number
 def squaresum(number):
 	sum = 0
 	while (number > 0):
